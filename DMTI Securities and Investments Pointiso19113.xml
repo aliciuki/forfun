@@ -10,34 +10,24 @@
 	<mdb:defaultLocale>
 		<lan:PT_Locale>
 			<lan:language>
-				<lan:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/php/code_list.php" codeListValue="eng">eng</lan:LanguageCode>
+				<lan:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="eng">eng</lan:LanguageCode>
 			</lan:language>
 			<lan:country>
-				<lan:CountryCode codeList="http://www.iso.org/iso/country_codes/iso_3166_code_lists.htm" codeListValue="CA">CA</lan:CountryCode>
+				<lan:countryCode codeList="http://www.loc.gov/standards/iso366-1/" codeListValue="us">us</lan:countryCode>
 			</lan:country>
 			<lan:characterEncoding>
-				<lan:MD_CharacterSetCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#MD_CharacterSetCode" codeListValue="utf8">utf8</lan:MD_CharacterSetCode>
+				<lan:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_CharacterSetCode" codeListValue="utf8">utf8</lan:MD_CharacterSetCode>
 			</lan:characterEncoding>
 		</lan:PT_Locale>
 	</mdb:defaultLocale>
-	<mdb:metadataScope>
-		<mdb:MD_MetadataScope>
-			<mdb:resourceScope>
-				<mcc:MD_ScopeCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#MD_ScopeCode" codeListValue="series">series</mcc:MD_ScopeCode>
-			</mdb:resourceScope>
-			<mdb:name>
-				<gco:CharacterString>Aggregation Series</gco:CharacterString>
-			</mdb:name>
-		</mdb:MD_MetadataScope>
-	</mdb:metadataScope>
 	<mdb:contact>
 		<cit:CI_Responsibility>
 			<cit:role>
-				<cit:CI_RoleCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#CI_RoleCode" codeListValue="owner">owner</cit:CI_RoleCode>
+				<cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codeLists.xml#CI_RoleCode" codeListValue="owner">owner</cit:CI_RoleCode>
 			</cit:role>
 			<cit:party>
 				<cit:CI_Organisation>
-					<cit:name>
+					<cit:name xsi:type="lan:PT_FreeText_PropertyType">
 						<gco:CharacterString>DMTI Spatial Inc.</gco:CharacterString>
 					</cit:name>
 					<cit:contactInfo>
@@ -50,9 +40,6 @@
 									<cit:administrativeArea>
 										<gco:CharacterString>Ontario</gco:CharacterString>
 									</cit:administrativeArea>
-									<cit:country>
-										<lan:CountryCode codeList="http://www.iso.org/iso/country_codes/iso_3166_code_lists.htm" codeListValue="CA">CA</lan:CountryCode>
-									</cit:country>
 								</cit:CI_Address>
 							</cit:address>
 						</cit:CI_Contact>
@@ -64,23 +51,39 @@
 	<mdb:dateInfo>
 		<cit:CI_Date>
 			<cit:date>
-				<gco:DateTime>2024-11-19T00:00:00</gco:DateTime>
+				<gco:DateTime>2024-11-19</gco:DateTime>
 			</cit:date>
 			<cit:dateType>
-				<cit:CI_DateTypeCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#CI_DateTypeCode" codeListValue="revision">revision</cit:CI_DateTypeCode>
+				<cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codeLists.xml#CI_DateTypeCode" codeListValue="creation">creation</cit:CI_DateTypeCode>
 			</cit:dateType>
 		</cit:CI_Date>
 	</mdb:dateInfo>
 	<mdb:metadataStandard>
 		<cit:CI_Citation>
-			<cit:title>
+			<cit:title xsi:type="lan:PT_FreeText_PropertyType">
 				<gco:CharacterString>ISO 19115-3 Geographic Information - Metadata - Part 1: Fundamentals</gco:CharacterString>
 			</cit:title>
-			<cit:edition>
+			<cit:edition xsi:type="lan:PT_FreeText_PropertyType">
 				<gco:CharacterString>2014</gco:CharacterString>
 			</cit:edition>
+			<cit:presentationForm>
+				<cit:CI_PresentationFormCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codeLists.xml#CI_PresentationFormCode" codeListValue="mapDigital">mapDigital</cit:CI_PresentationFormCode>
+			</cit:presentationForm>
 		</cit:CI_Citation>
 	</mdb:metadataStandard>
+	<mdb:otherLocale>
+		<lan:PT_Locale>
+			<lan:language>
+				<lan:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="eng">eng</lan:LanguageCode>
+			</lan:language>
+			<lan:country>
+				<lan:countryCode codeList="http://www.loc.gov/standards/iso366-1/" codeListValue="us">us</lan:countryCode>
+			</lan:country>
+			<lan:characterEncoding>
+				<lan:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_CharacterSetCode" codeListValue="utf8">utf8</lan:MD_CharacterSetCode>
+			</lan:characterEncoding>
+		</lan:PT_Locale>
+	</mdb:otherLocale>
 	<mdb:referenceSystemInfo>
 		<mrs:MD_ReferenceSystem>
 			<mrs:referenceSystemIdentifier>
@@ -99,7 +102,7 @@
 		<mri:MD_DataIdentification>
 			<mri:citation>
 				<cit:CI_Citation>
-					<cit:title>
+					<cit:title xsi:type="lan:PT_FreeText_PropertyType">
 						<gco:CharacterString>Securities and Investments Point</gco:CharacterString>
 					</cit:title>
 					<cit:alternateTitle>
@@ -108,31 +111,31 @@
 					<cit:date>
 						<cit:CI_Date>
 							<cit:date>
-								<gco:DateTime>2015-09-15T00:00:00</gco:DateTime>
+								<gco:DateTime>2015-09-15</gco:DateTime>
 							</cit:date>
 							<cit:dateType>
-								<cit:CI_DateTypeCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#CI_DateTypeCode" codeListValue="publication">publication</cit:CI_DateTypeCode>
+								<cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codeLists.xml#CI_DateTypeCode" codeListValue="publication">publication</cit:CI_DateTypeCode>
 							</cit:dateType>
 						</cit:CI_Date>
 					</cit:date>
 					<cit:date>
 						<cit:CI_Date>
 							<cit:date>
-								<gco:DateTime>2023-09-15T00:00:00</gco:DateTime>
+								<gco:DateTime>2023-09-15</gco:DateTime>
 							</cit:date>
 							<cit:dateType>
-								<cit:CI_DateTypeCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#CI_DateTypeCode" codeListValue="revision">revision</cit:CI_DateTypeCode>
+								<cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codeLists.xml#CI_DateTypeCode" codeListValue="revision">revision</cit:CI_DateTypeCode>
 							</cit:dateType>
 						</cit:CI_Date>
 					</cit:date>
 					<cit:citedResponsibleParty>
 						<cit:CI_Responsibility>
 							<cit:role>
-								<cit:CI_RoleCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#CI_RoleCode" codeListValue="owner">owner</cit:CI_RoleCode>
+								<cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codeLists.xml#CI_RoleCode" codeListValue="owner">owner</cit:CI_RoleCode>
 							</cit:role>
 							<cit:party>
 								<cit:CI_Organisation>
-									<cit:name>
+									<cit:name xsi:type="lan:PT_FreeText_PropertyType">
 										<gco:CharacterString>DMTI Spatial Inc.</gco:CharacterString>
 									</cit:name>
 									<cit:contactInfo>
@@ -145,9 +148,6 @@
 													<cit:administrativeArea>
 														<gco:CharacterString>Ontario</gco:CharacterString>
 													</cit:administrativeArea>
-													<cit:country>
-														<lan:CountryCode codeList="http://www.iso.org/iso/country_codes/iso_3166_code_lists.htm" codeListValue="CA">CA</lan:CountryCode>
-													</cit:country>
 												</cit:CI_Address>
 											</cit:address>
 										</cit:CI_Contact>
@@ -156,6 +156,9 @@
 							</cit:party>
 						</cit:CI_Responsibility>
 					</cit:citedResponsibleParty>
+					<cit:presentationForm>
+						<cit:CI_PresentationFormCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codeLists.xml#CI_PresentationFormCode" codeListValue="tableDigital">tableDigital</cit:CI_PresentationFormCode>
+					</cit:presentationForm>
 					<cit:series>
 						<cit:CI_Series>
 							<cit:name>
@@ -165,20 +168,20 @@
 					</cit:series>
 				</cit:CI_Citation>
 			</mri:citation>
-			<mri:abstract>
+			<mri:abstract xsi:type="lan:PT_FreeText_PropertyType">
 				<gco:CharacterString>This layer indicates the locations of institutions related to Securities and Investments (i.e. financial institutions).  All features are classified using the North America Standard Industry Classification System (NAICS) and Standard Industry Classification (SIC), for further analysis. Additional tables and supporting documentation are available in the Data Dictionary and User Manual.</gco:CharacterString>
 			</mri:abstract>
 			<mri:status>
-				<mcc:MD_ProgressCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#MD_ProgressCode" codeListValue="completed">completed</mcc:MD_ProgressCode>
+				<mcc:MD_ProgressCode codeSpace="ISOTC211/19115" codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ProgressCode" codeListValue="completed">completed</mcc:MD_ProgressCode>
 			</mri:status>
 			<mri:pointOfContact>
 				<cit:CI_Responsibility>
 					<cit:role>
-						<cit:CI_RoleCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#CI_RoleCode" codeListValue="resourceProvider">resourceProvider</cit:CI_RoleCode>
+						<cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codeLists.xml#CI_RoleCode" codeListValue="resourceProvider">resourceProvider</cit:CI_RoleCode>
 					</cit:role>
 					<cit:party>
 						<cit:CI_Organisation>
-							<cit:name>
+							<cit:name xsi:type="lan:PT_FreeText_PropertyType">
 								<gco:CharacterString>Scholars Portal, Ontario Council of University Libraries</gco:CharacterString>
 							</cit:name>
 							<cit:contactInfo>
@@ -191,9 +194,6 @@
 											<cit:administrativeArea>
 												<gco:CharacterString>Ontario</gco:CharacterString>
 											</cit:administrativeArea>
-											<cit:country>
-												<lan:CountryCode codeList="http://www.iso.org/iso/country_codes/iso_3166_code_lists.htm" codeListValue="CA">CA</lan:CountryCode>
-											</cit:country>
 											<cit:electronicMailAddress>
 												<gco:CharacterString>datagis@scholarsportal.info</gco:CharacterString>
 											</cit:electronicMailAddress>
@@ -206,7 +206,7 @@
 				</cit:CI_Responsibility>
 			</mri:pointOfContact>
 			<mri:spatialRepresentationType>
-				<mcc:MD_SpatialRepresentationTypeCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#MD_SpatialRepresentationTypeCode" codeListValue="vector">vector</mcc:MD_SpatialRepresentationTypeCode>
+				<mcc:MD_SpatialRepresentationTypeCode codeSpace="ISOTC211/19115" codeList="mcc:MD_SpatialRepresentationTypeCode" codeListValue="vector">vector</mcc:MD_SpatialRepresentationTypeCode>
 			</mri:spatialRepresentationType>
 			<mri:spatialResolution>
 				<mri:MD_Resolution>
@@ -219,21 +219,13 @@
 					</mri:equivalentScale>
 				</mri:MD_Resolution>
 			</mri:spatialResolution>
-			<mri:spatialResolution>
-				<mri:MD_Resolution>
-					<mri:equivalentScale>
-						<mri:MD_RepresentativeFraction>
-							<mri:denominator>
-								<gco:Integer>50000</gco:Integer>
-							</mri:denominator>
-						</mri:MD_RepresentativeFraction>
-					</mri:equivalentScale>
-				</mri:MD_Resolution>
-			</mri:spatialResolution>
 			<mri:topicCategory>
 				<mri:MD_TopicCategoryCode>economy</mri:MD_TopicCategoryCode>
 			</mri:topicCategory>
 			<mri:extent>
+				<cit:description xsi:type="lan:PT_FreeText_PropertyType">
+					<gco:CharacterString>Spatial extent</gco:CharacterString>
+				</cit:description>
 				<gex:EX_Extent>
 					<gex:geographicElement>
 						<gex:EX_GeographicBoundingBox>
@@ -253,19 +245,73 @@
 					</gex:geographicElement>
 				</gex:EX_Extent>
 			</mri:extent>
-			<mri:resourceMaintenance>
-				<mmi:MD_MaintenanceInformation>
-					<mmi:maintenanceAndUpdateFrequency>
-						<mmi:MD_MaintenanceFrequencyCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#MD_MaintenanceFrequencyCode" codeListValue="quarterly">quarterly</mmi:MD_MaintenanceFrequencyCode>
-					</mmi:maintenanceAndUpdateFrequency>
-					<mmi:contact>
+			<mri:additionalDocumentation>
+				<cit:CI_Citation>
+					<cit:title xsi:type="lan:PT_FreeText_PropertyType">
+						<gco:CharacterString>Scholars GeoPortal DMTI Spatial Data Terms of Use</gco:CharacterString>
+					</cit:title>
+					<cit:citedResponsibleParty>
 						<cit:CI_Responsibility>
 							<cit:role>
-								<cit:CI_RoleCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#CI_RoleCode" codeListValue="originator">originator</cit:CI_RoleCode>
+								<cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codeLists.xml#CI_RoleCode" codeListValue="distributor">distributor</cit:CI_RoleCode>
 							</cit:role>
 							<cit:party>
 								<cit:CI_Organisation>
-									<cit:name>
+									<cit:name xsi:type="lan:PT_FreeText_PropertyType">
+										<gco:CharacterString>OCUL&apos;s Scholars Portal</gco:CharacterString>
+									</cit:name>
+									<cit:contactInfo>
+										<cit:CI_Contact>
+											<cit:address>
+												<cit:CI_Address>
+													<cit:city>
+														<gco:CharacterString>Toronto</gco:CharacterString>
+													</cit:city>
+													<cit:administrativeArea>
+														<gco:CharacterString>Ontario</gco:CharacterString>
+													</cit:administrativeArea>
+													<cit:country>
+														<gco:CharacterString>Canada</gco:CharacterString>
+													</cit:country>
+													<cit:electronicMailAddress>
+														<gco:CharacterString>datagis@scholarsportal.info</gco:CharacterString>
+													</cit:electronicMailAddress>
+												</cit:CI_Address>
+											</cit:address>
+										</cit:CI_Contact>
+									</cit:contactInfo>
+								</cit:CI_Organisation>
+							</cit:party>
+						</cit:CI_Responsibility>
+					</cit:citedResponsibleParty>
+					<cit:presentationForm>
+						<cit:CI_PresentationFormCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codeLists.xml#CI_PresentationFormCode" codeListValue="documentDigital">documentDigital</cit:CI_PresentationFormCode>
+					</cit:presentationForm>
+					<cit:onlineResource>
+						<cit:CI_OnlineResource>
+							<cit:linkage>
+								<gco:CharacterString>https://maps.scholarsportal.info/files/pdfs/restricted/DMTI/DMTISpatialData_TermsOfUse_ScholarsGeoPortal.pdf</gco:CharacterString>
+							</cit:linkage>
+							<cit:protocol>
+								<gco:CharacterString>https</gco:CharacterString>
+							</cit:protocol>
+							<cit:name xsi:type="lan:PT_FreeText_PropertyType">
+								<gco:CharacterString>Scholars GeoPortal DMTI Spatial Data Terms of Use</gco:CharacterString>
+							</cit:name>
+						</cit:CI_OnlineResource>
+					</cit:onlineResource>
+				</cit:CI_Citation>
+			</mri:additionalDocumentation>
+			<mri:resourceMaintenance>
+				<mmi:MD_MaintenanceInformation>
+					<mmi:contact>
+						<cit:CI_Responsibility>
+							<cit:role>
+								<cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codeLists.xml#CI_RoleCode" codeListValue="originator">originator</cit:CI_RoleCode>
+							</cit:role>
+							<cit:party>
+								<cit:CI_Organisation>
+									<cit:name xsi:type="lan:PT_FreeText_PropertyType">
 										<gco:CharacterString>NASA/Global Change Master Directory (GCMD)</gco:CharacterString>
 									</cit:name>
 								</cit:CI_Organisation>
@@ -274,419 +320,260 @@
 					</mmi:contact>
 				</mmi:MD_MaintenanceInformation>
 			</mri:resourceMaintenance>
-			<mri:graphicOverview>
-				<mcc:MD_BrowseGraphic>
-					<mcc:fileName>
-						<gco:CharacterString>http://images.scholarsportal.info/gis/thumbnails/DMTI/DMTI_2022_CMCS_SecuritiesAndInvestmentsPoint.png</gco:CharacterString>
-					</mcc:fileName>
-					<mcc:fileDescription>
-						<gco:CharacterString>Thumbnail</gco:CharacterString>
-					</mcc:fileDescription>
-					<mcc:fileType>
-						<gco:CharacterString>png</gco:CharacterString>
-					</mcc:fileType>
-				</mcc:MD_BrowseGraphic>
-			</mri:graphicOverview>
 			<mri:descriptiveKeywords>
-				<mri:MD_Keywords>
-					<mri:keyword>
-						<gco:CharacterString>EPOI</gco:CharacterString>
-					</mri:keyword>
-					<mri:keyword>
-						<gco:CharacterString>Finance</gco:CharacterString>
-					</mri:keyword>
-					<mri:keyword>
-						<gco:CharacterString>Economic</gco:CharacterString>
-					</mri:keyword>
-					<mri:keyword>
-						<gco:CharacterString>Institutions</gco:CharacterString>
-					</mri:keyword>
-					<mri:keyword>
-						<gco:CharacterString>Transactions</gco:CharacterString>
-					</mri:keyword>
-					<mri:keyword>
-						<gco:CharacterString>Financial</gco:CharacterString>
-					</mri:keyword>
-					<mri:type>
-						<mri:MD_KeywordTypeCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#napMD_KeywordTypeCode" codeListValue="theme">theme</mri:MD_KeywordTypeCode>
-					</mri:type>
-					<mri:thesaurusName>
-						<cit:CI_Citation>
-							<cit:title>
-								<gco:CharacterString>NA</gco:CharacterString>
-							</cit:title>
-							<cit:date>
-								<cit:CI_Date>
-									<cit:date>
-										<gco:DateTime>2024-10-06T00:00:00</gco:DateTime>
-									</cit:date>
-									<cit:dateType>
-										<cit:CI_DateTypeCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#CI_DateTypeCode" codeListValue="publication">publication</cit:CI_DateTypeCode>
-									</cit:dateType>
-								</cit:CI_Date>
-							</cit:date>
-							<cit:citedResponsibleParty>
-								<cit:CI_Responsibility>
-									<cit:role>
-										<cit:CI_RoleCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#CI_RoleCode" codeListValue="originator">originator</cit:CI_RoleCode>
-									</cit:role>
-									<cit:party>
-										<cit:CI_Organisation>
-											<cit:name>
-												<gco:CharacterString>NASA/Global Change Master Directory (GCMD)</gco:CharacterString>
-											</cit:name>
-										</cit:CI_Organisation>
-									</cit:party>
-								</cit:CI_Responsibility>
-							</cit:citedResponsibleParty>
-						</cit:CI_Citation>
-					</mri:thesaurusName>
-				</mri:MD_Keywords>
+				<mri:keyword xsi:type="lan:PT_FreeText_PropertyType"/>
+				<mri:type>
+					<mri:MD_KeywordTypeCode codeSpace="ISOTC211/19115" codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="subTopicCategory">subTopicCategory</mri:MD_KeywordTypeCode>
+				</mri:type>
+				<mri:thesaurusName>
+					<cit:CI_Citation>
+						<cit:title xsi:type="lan:PT_FreeText_PropertyType">
+							<gco:CharacterString>Scholars Portal Geospatial Data Tags</gco:CharacterString>
+						</cit:title>
+						<cit:date>
+							<cit:CI_Date>
+								<cit:date>
+									<gco:DateTime>2024-11-19</gco:DateTime>
+								</cit:date>
+								<cit:dateType>
+									<cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codeLists.xml#CI_DateTypeCode" codeListValue="creation">creation</cit:CI_DateTypeCode>
+								</cit:dateType>
+							</cit:CI_Date>
+						</cit:date>
+						<cit:citedResponsibleParty>
+							<cit:CI_Responsibility>
+								<cit:role>
+									<cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codeLists.xml#CI_RoleCode" codeListValue="originator">originator</cit:CI_RoleCode>
+								</cit:role>
+								<cit:party>
+									<cit:CI_Organisation>
+										<cit:name xsi:type="lan:PT_FreeText_PropertyType">
+											<gco:CharacterString>OCUL&apos;s Scholars Portal</gco:CharacterString>
+										</cit:name>
+										<cit:contactInfo>
+											<cit:CI_Contact>
+												<cit:address>
+													<cit:CI_Address>
+														<cit:city>
+															<gco:CharacterString>Toronto</gco:CharacterString>
+														</cit:city>
+														<cit:administrativeArea>
+															<gco:CharacterString>Ontario</gco:CharacterString>
+														</cit:administrativeArea>
+														<cit:country>
+															<gco:CharacterString>Canada</gco:CharacterString>
+														</cit:country>
+														<cit:electronicMailAddress>
+															<gco:CharacterString>datagis@scholarsportal.info</gco:CharacterString>
+														</cit:electronicMailAddress>
+													</cit:CI_Address>
+												</cit:address>
+											</cit:CI_Contact>
+										</cit:contactInfo>
+									</cit:CI_Organisation>
+								</cit:party>
+							</cit:CI_Responsibility>
+						</cit:citedResponsibleParty>
+						<cit:presentationForm>
+							<cit:CI_PresentationFormCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codeLists.xml#CI_PresentationFormCode" codeListValue="audioDigital">audioDigital</cit:CI_PresentationFormCode>
+						</cit:presentationForm>
+					</cit:CI_Citation>
+				</mri:thesaurusName>
 			</mri:descriptiveKeywords>
 			<mri:resourceConstraints>
 				<mco:MD_LegalConstraints>
 					<mco:accessConstraints>
-						<mco:MD_RestrictionCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#MD_RestrictionCode" codeListValue="license">license</mco:MD_RestrictionCode>
+						<mco:MD_RestrictionCode codeSpace="ISOTC211/19115" codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_RestrictionCode" codeListValue="license">license</mco:MD_RestrictionCode>
 					</mco:accessConstraints>
 					<mco:useConstraints>
-						<mco:MD_RestrictionCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#MD_RestrictionCode" codeListValue="restricted">restricted</mco:MD_RestrictionCode>
+						<mco:MD_RestrictionCode codeSpace="ISOTC211/19115" codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_RestrictionCode" codeListValue="restricted">restricted</mco:MD_RestrictionCode>
 					</mco:useConstraints>
-					<mco:otherConstraints>
+					<mco:otherConstraints xsi:type="lan:PT_FreeText_PropertyType">
 						<gco:CharacterString>Access and use of DMTI CanMap Data is governed by a license between DMTI and CRKN. These data products are made available through Scholars GeoPortal for the exclusive use of current, authorized users (faculty, staff members, and students) at an Ontario University or a subscribing university outside of Ontario. These data products are provided for the exclusive purposes of teaching, academic research and publishing, and/or planning of educational services at the University, and may not be used for any other purposes without the explicit written approval, in advance, of DMTI. More details under the Scholars GeoPortal DMTI Spatial Data Terms of Use.</gco:CharacterString>
 					</mco:otherConstraints>
 				</mco:MD_LegalConstraints>
 			</mri:resourceConstraints>
 			<mri:associatedResource>
-				<mri:MD_AssociatedResource>
-					<mri:name>
-						<cit:CI_Citation>
-							<cit:title>
-								<gco:CharacterString>CanMap Content Suite - User Manual 2019.3</gco:CharacterString>
-							</cit:title>
-							<cit:date>
-								<cit:CI_Date>
-									<cit:date>
-										<gco:DateTime>2019-09-01T00:00:00</gco:DateTime>
-									</cit:date>
-									<cit:dateType>
-										<cit:CI_DateTypeCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#CI_DateTypeCode" codeListValue="creation">creation</cit:CI_DateTypeCode>
-									</cit:dateType>
-								</cit:CI_Date>
-							</cit:date>
-							<cit:edition>
-								<gco:CharacterString>2019.3</gco:CharacterString>
-							</cit:edition>
-							<cit:citedResponsibleParty>
-								<cit:CI_Responsibility>
-									<cit:role>
-										<cit:CI_RoleCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#CI_RoleCode" codeListValue="owner">owner</cit:CI_RoleCode>
-									</cit:role>
-									<cit:party>
-										<cit:CI_Organisation>
-											<cit:name>
-												<gco:CharacterString>DMTI Spatial Inc.</gco:CharacterString>
-											</cit:name>
-											<cit:contactInfo>
-												<cit:CI_Contact>
-													<cit:address>
-														<cit:CI_Address>
-															<cit:city>
-																<gco:CharacterString>Markham</gco:CharacterString>
-															</cit:city>
-															<cit:administrativeArea>
-																<gco:CharacterString>Ontario</gco:CharacterString>
-															</cit:administrativeArea>
-															<cit:country>
-																<lan:CountryCode codeList="http://www.iso.org/iso/country_codes/iso_3166_code_lists.htm" codeListValue="CA">CA</lan:CountryCode>
-															</cit:country>
-														</cit:CI_Address>
-													</cit:address>
-												</cit:CI_Contact>
-											</cit:contactInfo>
-										</cit:CI_Organisation>
-									</cit:party>
-								</cit:CI_Responsibility>
-							</cit:citedResponsibleParty>
-							<cit:onlineResource>
-								<cit:CI_OnlineResource>
-									<cit:linkage>
-										<gco:CharacterString>https://maps.scholarsportal.info/files/pdfs/restricted/DMTI/CanMapCS_2019/UserManual_CanMap_Content_Suite_v2019_3.pdf</gco:CharacterString>
-									</cit:linkage>
-									<cit:protocol>
-										<gco:CharacterString>https</gco:CharacterString>
-									</cit:protocol>
-									<cit:name>
-										<gco:CharacterString>CanMap Content Suite - User Manual 2019.3</gco:CharacterString>
-									</cit:name>
-									<cit:description>
-										<gco:CharacterString>User manual</gco:CharacterString>
-									</cit:description>
-									<cit:function>
-										<cit:CI_OnLineFunctionCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#CI_OnLineFunctionCode" codeListValue="information">information</cit:CI_OnLineFunctionCode>
-									</cit:function>
-								</cit:CI_OnlineResource>
-							</cit:onlineResource>
-						</cit:CI_Citation>
-					</mri:name>
-					<mri:associationType>
-						<mri:DS_AssociationTypeCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#DS_AssociationTypeCode" codeListValue="source">source</mri:DS_AssociationTypeCode>
-					</mri:associationType>
-					<mri:initiativeType>
-						<mri:DS_InitiativeTypeCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#DS_InitiativeTypeCode" codeListValue="collection">collection</mri:DS_InitiativeTypeCode>
-					</mri:initiativeType>
-				</mri:MD_AssociatedResource>
+				<mri:name>
+					<cit:CI_Citation>
+						<cit:title xsi:type="lan:PT_FreeText_PropertyType">
+							<gco:CharacterString>Securities and Investments Point (zip) - 2022</gco:CharacterString>
+						</cit:title>
+						<cit:date>
+							<cit:CI_Date>
+								<cit:date>
+									<gco:DateTime>2024-11-19</gco:DateTime>
+								</cit:date>
+								<cit:dateType>
+									<cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codeLists.xml#CI_DateTypeCode" codeListValue="creation">creation</cit:CI_DateTypeCode>
+								</cit:dateType>
+							</cit:CI_Date>
+						</cit:date>
+						<cit:presentationForm>
+							<cit:CI_PresentationFormCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codeLists.xml#CI_PresentationFormCode" codeListValue="documentDigital">documentDigital</cit:CI_PresentationFormCode>
+						</cit:presentationForm>
+						<cit:onlineResource>
+							<cit:CI_OnlineResource>
+								<cit:linkage>
+									<gco:CharacterString>https://maps.scholarsportal.info/files/zips/DMTI/DMTI_2022_CMCS_SecuritiesAndInvestmentsPoint.zip</gco:CharacterString>
+								</cit:linkage>
+								<cit:protocol>
+									<gco:CharacterString>https</gco:CharacterString>
+								</cit:protocol>
+								<cit:name xsi:type="lan:PT_FreeText_PropertyType">
+									<gco:CharacterString>Download Securities and Investments Point (zip) - 2022</gco:CharacterString>
+								</cit:name>
+							</cit:CI_OnlineResource>
+						</cit:onlineResource>
+					</cit:CI_Citation>
+				</mri:name>
+				<mri:associationType>
+					<mri:DS_AssociationTypeCode codeSpace="ISOTC211/19115" codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#DS_AssociationTypeCode.html" codeListValue="largerWorkCitation">largerWorkCitation</mri:DS_AssociationTypeCode>
+				</mri:associationType>
 			</mri:associatedResource>
-			<mri:associatedResource>
-				<mri:MD_AssociatedResource>
-					<mri:name>
-						<cit:CI_Citation>
-							<cit:title>
-								<gco:CharacterString>Scholars GeoPortal DMTI Spatial Data Terms of Use</gco:CharacterString>
-							</cit:title>
-							<cit:date>
-								<cit:CI_Date>
-									<cit:date>
-										<gco:DateTime>2022-05-01T00:00:00</gco:DateTime>
-									</cit:date>
-									<cit:dateType>
-										<cit:CI_DateTypeCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#CI_DateTypeCode" codeListValue="creation">creation</cit:CI_DateTypeCode>
-									</cit:dateType>
-								</cit:CI_Date>
-							</cit:date>
-							<cit:citedResponsibleParty>
-								<cit:CI_Responsibility>
-									<cit:role>
-										<cit:CI_RoleCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#CI_RoleCode" codeListValue="pointOfContact">pointOfContact</cit:CI_RoleCode>
-									</cit:role>
-									<cit:party>
-										<cit:CI_Organisation>
-											<cit:name>
-												<gco:CharacterString>Scholars Portal, Ontario Council of University Libraries</gco:CharacterString>
-											</cit:name>
-											<cit:contactInfo>
-												<cit:CI_Contact>
-													<cit:address>
-														<cit:CI_Address>
-															<cit:city>
-																<gco:CharacterString>Toronto</gco:CharacterString>
-															</cit:city>
-															<cit:administrativeArea>
-																<gco:CharacterString>Ontario</gco:CharacterString>
-															</cit:administrativeArea>
-															<cit:country>
-																<lan:CountryCode codeList="http://www.iso.org/iso/country_codes/iso_3166_code_lists.htm" codeListValue="CA">CA</lan:CountryCode>
-															</cit:country>
-															<cit:electronicMailAddress>
-																<gco:CharacterString>datagis@scholarsportal.info</gco:CharacterString>
-															</cit:electronicMailAddress>
-														</cit:CI_Address>
-													</cit:address>
-												</cit:CI_Contact>
-											</cit:contactInfo>
-										</cit:CI_Organisation>
-									</cit:party>
-								</cit:CI_Responsibility>
-							</cit:citedResponsibleParty>
-							<cit:presentationForm>
-								<cit:CI_PresentationFormCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#CI_PresentationFormCode" codeListValue="documentDigital">documentDigital</cit:CI_PresentationFormCode>
-							</cit:presentationForm>
-							<cit:onlineResource>
-								<cit:CI_OnlineResource>
-									<cit:linkage>
-										<gco:CharacterString>https://maps.scholarsportal.info/files/pdfs/restricted/DMTI/DMTISpatialData_TermsOfUse_ScholarsGeoPortal.pdf</gco:CharacterString>
-									</cit:linkage>
-									<cit:protocol>
-										<gco:CharacterString>https</gco:CharacterString>
-									</cit:protocol>
-									<cit:name>
-										<gco:CharacterString>Scholars GeoPortal DMTI Spatial Data Terms of Use</gco:CharacterString>
-									</cit:name>
-									<cit:description>
-										<gco:CharacterString>Scholars GeoPortal DMTI Spatial Data Terms of Use</gco:CharacterString>
-									</cit:description>
-									<cit:function>
-										<cit:CI_OnLineFunctionCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#CI_OnLineFunctionCode" codeListValue="information">information</cit:CI_OnLineFunctionCode>
-									</cit:function>
-								</cit:CI_OnlineResource>
-							</cit:onlineResource>
-						</cit:CI_Citation>
-					</mri:name>
-					<mri:associationType>
-						<mri:DS_AssociationTypeCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#DS_AssociationTypeCode" codeListValue="stereoMate">stereoMate</mri:DS_AssociationTypeCode>
-					</mri:associationType>
-					<mri:initiativeType>
-						<mri:DS_InitiativeTypeCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#DS_InitiativeTypeCode" codeListValue="collection">collection</mri:DS_InitiativeTypeCode>
-					</mri:initiativeType>
-				</mri:MD_AssociatedResource>
-			</mri:associatedResource>
-			<mri:defaultLocale gco:nilReason="unknown"/>
-			<mri:environmentDescription>
+			<mri:defaultLocale>
+				<lan:PT_Locale>
+					<lan:language>
+						<lan:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="eng">eng</lan:LanguageCode>
+					</lan:language>
+					<lan:country>
+						<lan:countryCode codeList="http://www.loc.gov/standards/iso366-1/" codeListValue="us">us</lan:countryCode>
+					</lan:country>
+					<lan:characterEncoding>
+						<lan:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_CharacterSetCode" codeListValue="utf8">utf8</lan:MD_CharacterSetCode>
+					</lan:characterEncoding>
+				</lan:PT_Locale>
+			</mri:defaultLocale>
+			<mri:environmentDescription xsi:type="lan:PT_FreeText_PropertyType">
 				<gco:CharacterString>Esri ArcGIS 10.6.1s</gco:CharacterString>
 			</mri:environmentDescription>
 		</mri:MD_DataIdentification>
 	</mdb:identificationInfo>
-	<mdb:distributionInfo>
-		<mrd:MD_Distribution>
-			<mrd:distributionFormat>
-				<mrd:MD_Format>
-					<mrd:formatSpecificationCitation>
-						<cit:CI_Citation>
-							<cit:title>
-								<gco:CharacterString>zip</gco:CharacterString>
-							</cit:title>
-							<cit:edition>
-								<gco:CharacterString>zip 1.1</gco:CharacterString>
-							</cit:edition>
-						</cit:CI_Citation>
-					</mrd:formatSpecificationCitation>
-				</mrd:MD_Format>
-			</mrd:distributionFormat>
-			<mrd:distributor>
-				<mrd:MD_Distributor>
-					<mrd:distributorContact>
-						<cit:CI_Responsibility>
-							<cit:role>
-								<cit:CI_RoleCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#CI_RoleCode" codeListValue="distributor">distributor</cit:CI_RoleCode>
-							</cit:role>
-							<cit:party>
-								<cit:CI_Organisation>
-									<cit:name>
-										<gco:CharacterString>DMTI Spatial Inc.</gco:CharacterString>
-									</cit:name>
-									<cit:contactInfo>
-										<cit:CI_Contact>
-											<cit:address>
-												<cit:CI_Address>
-													<cit:city>
-														<gco:CharacterString>Markham</gco:CharacterString>
-													</cit:city>
-													<cit:administrativeArea>
-														<gco:CharacterString>Ontario</gco:CharacterString>
-													</cit:administrativeArea>
-													<cit:country>
-														<lan:CountryCode codeList="http://www.iso.org/iso/country_codes/iso_3166_code_lists.htm" codeListValue="CA">CA</lan:CountryCode>
-													</cit:country>
-												</cit:CI_Address>
-											</cit:address>
-										</cit:CI_Contact>
-									</cit:contactInfo>
-								</cit:CI_Organisation>
-							</cit:party>
-						</cit:CI_Responsibility>
-					</mrd:distributorContact>
-					<mrd:distributorFormat>
-						<mrd:MD_Format>
-							<mrd:formatSpecificationCitation>
-								<cit:CI_Citation>
-									<cit:title>
-										<gco:CharacterString>zip</gco:CharacterString>
-									</cit:title>
-									<cit:edition>
-										<gco:CharacterString>zip 1.1</gco:CharacterString>
-									</cit:edition>
-								</cit:CI_Citation>
-							</mrd:formatSpecificationCitation>
-						</mrd:MD_Format>
-					</mrd:distributorFormat>
-					<mrd:distributorTransferOptions>
-						<mrd:MD_DigitalTransferOptions>
-							<mrd:unitsOfDistribution>
-								<gco:CharacterString>dataset</gco:CharacterString>
-							</mrd:unitsOfDistribution>
-							<mrd:onLine>
-								<cit:CI_OnlineResource>
-									<cit:linkage>
-										<gco:CharacterString>https://maps.scholarsportal.info/files/zips/DMTI/DMTI_2022_CMCS_SecuritiesAndInvestmentsPoint.zip</gco:CharacterString>
-									</cit:linkage>
-									<cit:protocol>
-										<gco:CharacterString>https</gco:CharacterString>
-									</cit:protocol>
-									<cit:name>
-										<gco:CharacterString>Securities and Investments Point (zip) - 2022</gco:CharacterString>
-									</cit:name>
-									<cit:description>
-										<gco:CharacterString>zip file for download</gco:CharacterString>
-									</cit:description>
-									<cit:function>
-										<cit:CI_OnLineFunctionCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#CI_OnLineFunctionCode" codeListValue="download">download</cit:CI_OnLineFunctionCode>
-									</cit:function>
-								</cit:CI_OnlineResource>
-							</mrd:onLine>
-						</mrd:MD_DigitalTransferOptions>
-					</mrd:distributorTransferOptions>
-				</mrd:MD_Distributor>
-			</mrd:distributor>
-		</mrd:MD_Distribution>
-	</mdb:distributionInfo>
-	<mdb:dataQualityInfo>
-		<mdq:DQ_DataQuality>
-			<mdq:scope>
-				<mcc:MD_Scope>
-					<mcc:level>
-						<mcc:MD_ScopeCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#MD_ScopeCode" codeListValue="dataset">dataset</mcc:MD_ScopeCode>
-					</mcc:level>
-				</mcc:MD_Scope>
-			</mdq:scope>
-			<mdq:report>
-				<mdq:DQ_CompletenessCommission>
-					<mdq:result>
-						<mdq:DQ_ConformanceResult>
-							<mdq:specification>
-								<cit:CI_Citation>
-									<cit:title>
-										<gco:CharacterString>Conformance Specification Title</gco:CharacterString>
-									</cit:title>
-									<cit:date>
-										<cit:CI_Date>
-											<cit:date>
-												<gco:DateTime>2024-09-30T00:00:00</gco:DateTime>
-											</cit:date>
-											<cit:dateType>
-												<cit:CI_DateTypeCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#CI_DateTypeCode" codeListValue="creation">creation</cit:CI_DateTypeCode>
-											</cit:dateType>
-										</cit:CI_Date>
-									</cit:date>
-								</cit:CI_Citation>
-							</mdq:specification>
-							<mdq:explanation>
-								<gco:CharacterString>Explanation of conformance result</gco:CharacterString>
-							</mdq:explanation>
-							<mdq:pass>
-								<gco:Boolean>true</gco:Boolean>
-							</mdq:pass>
-						</mdq:DQ_ConformanceResult>
-					</mdq:result>
-				</mdq:DQ_CompletenessCommission>
-			</mdq:report>
-		</mdq:DQ_DataQuality>
-	</mdb:dataQualityInfo>
 	<mdb:resourceLineage>
 		<mrl:LI_Lineage>
-			<mrl:statement>
+			<mrl:statement xsi:type="lan:PT_FreeText_PropertyType">
 				<gco:CharacterString>Lineage statement text</gco:CharacterString>
 			</mrl:statement>
 			<mrl:scope>
 				<mcc:MD_Scope>
 					<mcc:level>
-						<mcc:MD_ScopeCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#MD_ScopeCode" codeListValue="dataset">dataset</mcc:MD_ScopeCode>
+						<mcc:MD_ScopeCode codeSpace="ISOTC211/19115" codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset">dataset</mcc:MD_ScopeCode>
 					</mcc:level>
 				</mcc:MD_Scope>
 			</mrl:scope>
 		</mrl:LI_Lineage>
 	</mdb:resourceLineage>
+	<mdb:dataQualityInfo>
+		<mdq:DQ_DataQuality>
+			<mdq:scope>
+				<mcc:MD_Scope>
+					<mcc:level>
+						<mcc:MD_ScopeCode codeSpace="ISOTC211/19115" codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset">dataset</mcc:MD_ScopeCode>
+					</mcc:level>
+				</mcc:MD_Scope>
+			</mdq:scope>
+		</mdq:DQ_DataQuality>
+	</mdb:dataQualityInfo>
+	<mdb:distributionInfo>
+		<mrd:MD_Distribution>
+			<mrd:description xsi:type="lan:PT_FreeText_PropertyType">
+				<gco:CharacterString>Full dataset as a ZIP file</gco:CharacterString>
+			</mrd:description>
+			<mrd:distributionFormat>
+				<mrd:MD_Format>
+					<mrd:formatSpecificationCitation>
+						<cit:CI_Citation>
+							<cit:title xsi:type="lan:PT_FreeText_PropertyType">
+								<gco:CharacterString>zip</gco:CharacterString>
+							</cit:title>
+							<cit:date>
+								<cit:CI_Date>
+									<cit:date>
+										<gco:DateTime>2022-09-01</gco:DateTime>
+									</cit:date>
+									<cit:dateType>
+										<cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codeLists.xml#CI_DateTypeCode" codeListValue="creation">creation</cit:CI_DateTypeCode>
+									</cit:dateType>
+								</cit:CI_Date>
+							</cit:date>
+							<cit:edition xsi:type="lan:PT_FreeText_PropertyType">
+								<gco:CharacterString>zip 1.1</gco:CharacterString>
+							</cit:edition>
+							<cit:presentationForm>
+								<cit:CI_PresentationFormCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codeLists.xml#CI_PresentationFormCode" codeListValue="documentDigital">documentDigital</cit:CI_PresentationFormCode>
+							</cit:presentationForm>
+						</cit:CI_Citation>
+					</mrd:formatSpecificationCitation>
+				</mrd:MD_Format>
+			</mrd:distributionFormat>
+			<mrd:distributor>
+				<mrd:distributorContact>
+					<cit:CI_Responsibility>
+						<cit:role>
+							<cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codeLists.xml#CI_RoleCode" codeListValue="distributor">distributor</cit:CI_RoleCode>
+						</cit:role>
+						<cit:party>
+							<cit:CI_Organisation>
+								<cit:name xsi:type="lan:PT_FreeText_PropertyType">
+									<gco:CharacterString>DMTI Spatial Inc.</gco:CharacterString>
+								</cit:name>
+								<cit:contactInfo>
+									<cit:CI_Contact>
+										<cit:address>
+											<cit:CI_Address>
+												<cit:city>
+													<gco:CharacterString>Markham</gco:CharacterString>
+												</cit:city>
+												<cit:administrativeArea>
+													<gco:CharacterString>Ontario</gco:CharacterString>
+												</cit:administrativeArea>
+												<cit:country>
+													<gco:CharacterString>Canada</gco:CharacterString>
+												</cit:country>
+												<cit:electronicMailAddress>
+													<gco:CharacterString>dmti@dmti.dmti</gco:CharacterString>
+												</cit:electronicMailAddress>
+											</cit:CI_Address>
+										</cit:address>
+									</cit:CI_Contact>
+								</cit:contactInfo>
+							</cit:CI_Organisation>
+						</cit:party>
+					</cit:CI_Responsibility>
+				</mrd:distributorContact>
+			</mrd:distributor>
+			<mrd:transferOptions>
+				<mrd:MD_DigitalTransferOptions>
+					<mrd:onLine>
+						<cit:CI_OnlineResource>
+							<cit:linkage>
+								<gco:CharacterString>https://maps.scholarsportal.info/files/zips/DMTI/DMTI_2022_CMCS_SecuritiesAndInvestmentsPoint.zip</gco:CharacterString>
+							</cit:linkage>
+							<cit:protocol>
+								<gco:CharacterString>https</gco:CharacterString>
+							</cit:protocol>
+							<cit:name xsi:type="lan:PT_FreeText_PropertyType">
+								<gco:CharacterString>Securities and Investments Point (zip) - 2022</gco:CharacterString>
+							</cit:name>
+							<cit:description xsi:type="lan:PT_FreeText_PropertyType">
+								<gco:CharacterString>zip file for download</gco:CharacterString>
+							</cit:description>
+						</cit:CI_OnlineResource>
+					</mrd:onLine>
+				</mrd:MD_DigitalTransferOptions>
+			</mrd:transferOptions>
+		</mrd:MD_Distribution>
+	</mdb:distributionInfo>
 	<mdb:metadataMaintenance>
 		<mmi:MD_MaintenanceInformation>
-			<mmi:maintenanceAndUpdateFrequency>
-				<mmi:MD_MaintenanceFrequencyCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#MD_MaintenanceFrequencyCode" codeListValue="continual">continual</mmi:MD_MaintenanceFrequencyCode>
-			</mmi:maintenanceAndUpdateFrequency>
 			<mmi:contact>
 				<cit:CI_Responsibility>
 					<cit:role>
-						<cit:CI_RoleCode codeList="standards.iso.org/19115/-3/lan/1.0/codelists.xml#CI_RoleCode" codeListValue="resourceProvider">resourceProvider</cit:CI_RoleCode>
+						<cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelist/cat/codeLists.xml#CI_RoleCode" codeListValue="resourceProvider">resourceProvider</cit:CI_RoleCode>
 					</cit:role>
 					<cit:party>
 						<cit:CI_Organisation>
-							<cit:name>
+							<cit:name xsi:type="lan:PT_FreeText_PropertyType">
 								<gco:CharacterString>DMTI Spatial Inc.</gco:CharacterString>
 							</cit:name>
 							<cit:contactInfo>
@@ -699,9 +586,6 @@
 											<cit:administrativeArea>
 												<gco:CharacterString>Ontario</gco:CharacterString>
 											</cit:administrativeArea>
-											<cit:country>
-												<lan:CountryCode codeList="http://www.iso.org/iso/country_codes/iso_3166_code_lists.htm" codeListValue="CA">CA</lan:CountryCode>
-											</cit:country>
 										</cit:CI_Address>
 									</cit:address>
 								</cit:CI_Contact>
@@ -712,4 +596,14 @@
 			</mmi:contact>
 		</mmi:MD_MaintenanceInformation>
 	</mdb:metadataMaintenance>
+	<mdb:metadataScope>
+		<mdb:MD_MetadataScope>
+			<mdb:resourceScope>
+				<mcc:MD_ScopeCode codeSpace="ISOTC211/19115" codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="series">series</mcc:MD_ScopeCode>
+			</mdb:resourceScope>
+			<mdb:name xsi:type="lan:PT_FreeText_PropertyType">
+				<gco:CharacterString>Aggregation Series</gco:CharacterString>
+			</mdb:name>
+		</mdb:MD_MetadataScope>
+	</mdb:metadataScope>
 </mdb:MD_Metadata>
