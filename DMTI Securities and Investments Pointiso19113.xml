@@ -103,7 +103,7 @@
 			<mri:citation>
 				<cit:CI_Citation>
 					<cit:title xsi:type="lan:PT_FreeText_PropertyType">
-						<gco:CharacterString>Securities and Investments Point</gco:CharacterString>
+						<gco:CharacterString>This is copied off the View as XML -- Securities and Investments Point</gco:CharacterString>
 					</cit:title>
 					<cit:alternateTitle>
 						<gco:CharacterString>SecuritiesAndInvestmentsPoint</gco:CharacterString>
