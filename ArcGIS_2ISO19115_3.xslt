@@ -305,7 +305,7 @@
         </lan:PT_Locale>
       </mdb:otherLocale>
 		</xsl:for-each>
-    <xsl:for-each select="/metadata/mdLinkage[(linkage != '') and (starts-with(linkage,'http://') or starts-with(linkage,'https://') or starts-with(linkage,'HTTP://') or starts-with(linkage,'HTTPS://'))]">
+    <xsl:for-each select="/metadata/mdLinkage">
       <mdb:metadataLinkage>
         <cit:CI_OnlineResource>
           <xsl:call-template name="CI_OnlineResource"/>
@@ -1500,7 +1500,7 @@
 				</mmi:MD_MaintenanceInformation>
 			</mri:resourceMaintenance>
 		</xsl:for-each>
-		<xsl:for-each select="graphOver[(.//* != '')]">
+		<xsl:for-each select="graphOver[(bgFileName != '') and (bgFileName != 'withheld') and not(contains(bgFileName, '\\')) and not(contains(bgFileName, ':\')) and not(contains(bgFileName, 'Server='))]">
 			<mri:graphicOverview>
 				<mcc:MD_BrowseGraphic>
 					<xsl:call-template name="MD_BrowseGraphic"/>
@@ -1683,18 +1683,9 @@
     </xsl:choose>
 	</xsl:template>
 	<xsl:template name="MD_BrowseGraphic">
-    <!-- browse graphic file name separate from its URL for ISO 19115-1/-3, make sure internal content not shared -->
     <xsl:choose>
-      <xsl:when test="bgFileName[translate(., $upper, $lower) = 'withheld']">
-        <mcc:fileName gco:nilReason="withheld"/>
-      </xsl:when>
-      <xsl:when test="(count(bgFileName[(. != '') and (contains(., '\\') or contains(., ':\') or contains(., 'ftp://') or contains(., 'Server='))]) &gt; 0)">
-        <xsl:for-each select="(bgFileName[(. != '') and (contains(., '\\') or contains(., ':\') or contains(., 'ftp://') or contains(., 'Server='))])[1]">
-          <mcc:fileName gco:nilReason="withheld"/>
-        </xsl:for-each>
-      </xsl:when>
-      <xsl:when test="(count(bgFileName[(. != '') and not(contains(., '\\')) and not(contains(., ':\')) and not(contains(., 'ftp://')) and not(contains(., 'Server='))]) &gt; 0)">
-        <xsl:for-each select="(bgFileName[(. != '') and not(contains(., '\\')) and not(contains(., ':\')) and not(contains(., 'ftp://')) and not(contains(., 'Server='))])[1]">
+      <xsl:when test="(count(bgFileName[. != '']) &gt; 0)">
+        <xsl:for-each select="(bgFileName[. != ''])[1]">
           <mcc:fileName>
             <gco:CharacterString>
               <xsl:value-of select="."/>
@@ -1739,7 +1730,7 @@
         </xsl:for-each>
 			</mcc:imageConstraints>
 		</xsl:for-each>
-    <xsl:for-each select="bgLinkage[(linkage != '') and (starts-with(linkage,'http://') or starts-with(linkage,'https://') or starts-with(linkage,'HTTP://') or starts-with(linkage,'HTTPS://'))]">
+    <xsl:for-each select="bgLinkage[. != '']">
       <mcc:linkage>
         <cit:CI_OnlineResource>
           <xsl:call-template name="CI_OnlineResource"/>
@@ -2115,8 +2106,8 @@
 			</srv:invocationName>
 		</xsl:for-each>
 		<xsl:choose>
-			<xsl:when test="(count(svConPt[(starts-with(linkage,'http://') or starts-with(linkage,'https://') or starts-with(linkage,'HTTP://') or starts-with(linkage,'HTTPS://'))]) &gt; 0)">
-        <xsl:for-each select="svConPt[(starts-with(linkage,'http://') or starts-with(linkage,'https://') or starts-with(linkage,'HTTP://') or starts-with(linkage,'HTTPS://'))]">
+			<xsl:when test="(count(svConPt[(.//* != '') or (.//@*[not(name() = 'Sync')] != '')]) &gt; 0)">
+        <xsl:for-each select="svConPt[(.//* != '') or (.//@* != '')]">
           <srv:connectPoint>
             <cit:CI_OnlineResource>
               <xsl:call-template name="CI_OnlineResource"/>
@@ -3171,7 +3162,7 @@
 				</gco:Real>
 			</mrd:transferSize>
 		</xsl:for-each>
-		<xsl:for-each select="onLineSrc[(starts-with(linkage,'http://') or starts-with(linkage,'https://') or starts-with(linkage,'HTTP://') or starts-with(linkage,'HTTPS://'))]">
+		<xsl:for-each select="onLineSrc[(starts-with(linkage,'http://') or starts-with(linkage,'ftp://')) and ((count(.//*[text()]) - count(./orDesc[starts-with(.,'0')])) &gt; 0)]">
 			<mrd:onLine>
 				<cit:CI_OnlineResource>
 					<xsl:call-template name="CI_OnlineResource"/>
@@ -4163,12 +4154,12 @@
 				</gco:CharacterString>
 			</mas:schemaAscii>
 		</xsl:for-each>
-		<xsl:for-each select="(asGraFile[((. != '') and not(contains(., '\\')) and not(contains(., ':\'))) or (starts-with(@src,'http://') or starts-with(@src,'https://') or starts-with(@src,'HTTP://') or starts-with(@src,'HTTPS://'))])[1]">
+		<xsl:for-each select="(asGraFile[(. != '') or (@src != '')])[1]">
 			<mas:graphicsFile>
 				<cit:CI_OnlineResource>
           <xsl:choose>
-            <xsl:when test="(@src[(starts-with(.,'http://') or starts-with(.,'https://') or starts-with(.,'HTTP://') or starts-with(.,'HTTPS://'))])">
-              <xsl:for-each select="(@src[(starts-with(.,'http://') or starts-with(.,'https://') or starts-with(.,'HTTP://') or starts-with(.,'HTTPS://'))])">
+            <xsl:when test="(@src[. != ''])">
+              <xsl:for-each select="(@src[. != ''])">
                 <cit:linkage>
                   <gco:CharacterString>
                     <xsl:value-of select="."/>
@@ -4180,7 +4171,7 @@
               <cit:linkage gco:nilReason="missing"/>
             </xsl:otherwise>
           </xsl:choose>
-          <xsl:if test="((. != '') and not(contains(., '\\')) and not(contains(., ':\')))">
+          <xsl:if test="(. != '')">
             <cit:name>
               <gco:CharacterString>
                 <xsl:value-of select="."/>
@@ -4190,12 +4181,12 @@
 				</cit:CI_OnlineResource>
 			</mas:graphicsFile>
 		</xsl:for-each>
-		<xsl:for-each select="(asSwDevFile[((. != '') and not(contains(., '\\')) and not(contains(., ':\'))) or (starts-with(@src,'http://') or starts-with(@src,'https://') or starts-with(@src,'HTTP://') or starts-with(@src,'HTTPS://'))])[1]">
+		<xsl:for-each select="(asSwDevFile[(. != '') or (@src != '')])[1]">
 			<mas:softwareDevelopmentFile>
 				<cit:CI_OnlineResource>
           <xsl:choose>
-            <xsl:when test="(@src[(starts-with(.,'http://') or starts-with(.,'https://') or starts-with(.,'HTTP://') or starts-with(.,'HTTPS://'))])">
-              <xsl:for-each select="(@src[(starts-with(.,'http://') or starts-with(.,'https://') or starts-with(.,'HTTP://') or starts-with(.,'HTTPS://'))])">
+            <xsl:when test="(@src[. != ''])">
+              <xsl:for-each select="(@src[. != ''])">
                 <cit:linkage>
                   <gco:CharacterString>
                     <xsl:value-of select="."/>
@@ -4207,7 +4198,7 @@
               <cit:linkage gco:nilReason="missing"/>
             </xsl:otherwise>
           </xsl:choose>
-          <xsl:if test="((. != '') and not(contains(., '\\')) and not(contains(., ':\')))">
+          <xsl:if test="(. != '')">
             <cit:name>
               <gco:CharacterString>
                 <xsl:value-of select="."/>
@@ -4676,16 +4667,16 @@
 				<xsl:value-of select="."/>
 			</gml:description>
 		</xsl:for-each>
-		<xsl:for-each select="(gmlDescRef[((. != '') and (starts-with(.,'http://') or starts-with(.,'https://') or starts-with(.,'HTTP://') or starts-with(.,'HTTPS://'))) or ((@href != '') and (starts-with(@href,'http://') or starts-with(@href,'https://') or starts-with(@href,'HTTP://') or starts-with(@href,'HTTPS://')))])[1]">
+		<xsl:for-each select="(gmlDescRef[(. != '') or (@href != '')])[1]">
 			<gml:descriptionReference><xsl:choose>
-					<xsl:when test="(@href != '') and (starts-with(@href,'http://') or starts-with(@href,'https://') or starts-with(@href,'HTTP://') or starts-with(@href,'HTTPS://'))">
-						<xsl:for-each select="(@href[(starts-with(.,'http://') or starts-with(.,'https://') or starts-with(.,'HTTP://') or starts-with(.,'HTTPS://'))])[1]">
+					<xsl:when test="(@href != '')">
+						<xsl:for-each select="(@href[. != ''])[1]">
 							<xsl:attribute name="xlink:href">
 								<xsl:value-of select="."/>
 							</xsl:attribute>
 						</xsl:for-each>
 					</xsl:when>
-					<xsl:when test="((. != '') and (starts-with(.,'http://') or starts-with(.,'https://') or starts-with(.,'HTTP://') or starts-with(.,'HTTPS://')))">
+					<xsl:when test="(. != '')">
 						<xsl:attribute name="xlink:href">
 							<xsl:value-of select="."/>
 						</xsl:attribute>
@@ -4734,17 +4725,17 @@
 				<xsl:value-of select="."/>
 			</gml:quantityType>
 		</xsl:for-each>
-		<xsl:for-each select="(unitQuanRef[((. != '') and (starts-with(.,'http://') or starts-with(.,'https://') or starts-with(.,'HTTP://') or starts-with(.,'HTTPS://'))) or ((@href != '') and (starts-with(@href,'http://') or starts-with(@href,'https://') or starts-with(@href,'HTTP://') or starts-with(@href,'HTTPS://')))])[1]">
+		<xsl:for-each select="(unitQuanRef[(. != '') or (@href != '')])[1]">
 			<gml:quantityTypeReference>
 				<xsl:choose>
-					<xsl:when test="(@href != '') and (starts-with(@href,'http://') or starts-with(@href,'https://') or starts-with(@href,'HTTP://') or starts-with(@href,'HTTPS://'))">
-						<xsl:for-each select="(@href[(starts-with(.,'http://') or starts-with(.,'https://') or starts-with(.,'HTTP://') or starts-with(.,'HTTPS://'))])[1]">
+					<xsl:when test="(@href != '')">
+						<xsl:for-each select="(@href[. != ''])[1]">
 							<xsl:attribute name="xlink:href">
 								<xsl:value-of select="."/>
 							</xsl:attribute>
 						</xsl:for-each>
 					</xsl:when>
-					<xsl:when test="((. != '') and (starts-with(.,'http://') or starts-with(.,'https://') or starts-with(.,'HTTP://') or starts-with(.,'HTTPS://')))">
+					<xsl:when test="(. != '')">
 						<xsl:attribute name="xlink:href">
 							<xsl:value-of select="."/>
 						</xsl:attribute>
@@ -4904,7 +4895,7 @@
 				</cit:CI_Address>
 			</cit:address>
 		</xsl:for-each>
-		<xsl:for-each select="(cntOnlineRes[(linkage != '') and (starts-with(linkage,'http://') or starts-with(linkage,'https://') or starts-with(linkage,'HTTP://') or starts-with(linkage,'HTTPS://'))])">
+		<xsl:for-each select="(cntOnlineRes[(.//* != '') or (.//@*[not(name() = 'Sync')] != '')])[1]">
 			<cit:onlineResource>
 				<cit:CI_OnlineResource>
 					<xsl:call-template name="CI_OnlineResource"/>
@@ -5025,14 +5016,27 @@
 	</xsl:template>
 	<xsl:template name="CI_OnlineResource">
 		<xsl:choose>
-			<xsl:when test="(count(linkage[(. != '') and (starts-with(.,'http://') or starts-with(.,'https://') or starts-with(.,'HTTP://') or starts-with(.,'HTTPS://'))]) &gt; 0)">
-        <xsl:for-each select="linkage[1]">
-          <cit:linkage>
-            <gco:CharacterString>
-              <xsl:value-of select="."/>
-            </gco:CharacterString>
-          </cit:linkage>
-        </xsl:for-each>
+			<xsl:when test="(count(linkage[. != '']) &gt; 0)">
+				<xsl:choose>
+					<xsl:when test="count (linkage[. != '']) &gt; 1">
+						<xsl:for-each select="(linkage[. != ''])[1]">
+							<cit:linkage>
+								<gco:CharacterString>
+									<xsl:value-of select="."/>
+								</gco:CharacterString>
+							</cit:linkage>
+						</xsl:for-each>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:for-each select="linkage[. != '']">
+							<cit:linkage>
+								<gco:CharacterString>
+									<xsl:value-of select="."/>
+								</gco:CharacterString>
+							</cit:linkage>
+						</xsl:for-each>
+					</xsl:otherwise>
+				</xsl:choose>
 			</xsl:when>
 			<xsl:otherwise>
 				<cit:linkage gco:nilReason="missing"/>
@@ -5336,7 +5340,7 @@
 				</gco:CharacterString>
 			</cit:ISSN>
 		</xsl:for-each>
-		<xsl:for-each select="(citOnlineRes[(starts-with(linkage,'http://') or starts-with(linkage,'https://') or starts-with(linkage,'HTTP://') or starts-with(linkage,'HTTPS://'))])">
+		<xsl:for-each select="(citOnlineRes[(.//* != '') or (.//@*[not(name() = 'Sync')] != '')])">
 			<cit:onlineResource>
 				<cit:CI_OnlineResource>
 					<xsl:call-template name="CI_OnlineResource"/>
@@ -5344,7 +5348,7 @@
 			</cit:onlineResource>
 		</xsl:for-each>
 		<xsl:if test="(name(..) = 'dataIdInfo') and not(citOnlineRes) and (/metadata/distInfo/distTranOps/onLineSrc/linkage != '')">
-      <xsl:for-each select="(/metadata/distInfo/distTranOps/onLineSrc[(starts-with(linkage,'http://') or starts-with(linkage,'https://') or starts-with(linkage,'HTTP://') or starts-with(linkage,'HTTPS://'))])">
+      <xsl:for-each select="(/metadata/distInfo/distTranOps/onLineSrc[linkage != ''])">
         <cit:onlineResource>
           <cit:CI_OnlineResource>
             <xsl:call-template name="CI_OnlineResource"/>
