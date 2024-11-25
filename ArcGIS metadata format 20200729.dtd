@@ -183,7 +183,8 @@
 <!ENTITY % ConstsTypes '(Consts | LegConsts | SecConsts)'>
 <!ENTITY % Consts '(useLimit*, applicationScope?, constsGraphic*, referenceDoc*, releasability?, responsibleParty*)'> <!-- ISO 19115-1 adds applicationScope, constsGraphic, referenceDoc, releasability, responsibleParty -->
 <!ENTITY % Releasability '(addressee*, statement?, disseminationConsts*)'> <!-- from ISO 19115-1 -->
-<!ENTITY % LegConsts '(useLimit*, accessConsts*, useConsts*, othConsts*, applicationScope?, constsGraphic*, referenceDoc*, releasability?, responsibleParty*)'> <!-- ISO 19115-1 adds applicationScope, constsGraphic, referenceDoc, releasability, responsibleParty -->
+<!ENTITY % LegConsts '(useLimit*, accessConsts*, useConsts*, othConsts*, applicationScope?, constsGraphic*, referenceDoc*, releasability?, responsibleParty*, inspirePublicAccessLimits, inspireAccessUseConditions)'> <!-- ISO 19115-1 adds applicationScope, constsGraphic, referenceDoc, releasability, responsibleParty -->
+<!-- INSPIRE 2.0.1 adds inspirePublicAccessLimits, inspireAccessUseConditions - export to individual legal constraints sections separate from general legal constraints -->
 <!ENTITY % SecConsts '(useLimit*, class, userNote?, classSys?, handDesc?, applicationScope?, constsGraphic*, referenceDoc*, releasability?, responsibleParty*)'> <!-- ISO 19115-1 adds applicationScope, constsGraphic, referenceDoc, releasability, responsibleParty -->
 <!-- Data Quality Entities -->
 <!ENTITY % DataQual '(dqScope, report*, dataLineage?, standaloneReport?)'> <!-- from ISO 19115-1 many instances of data quality and lineage are possible, but ArcGIS metadata only allows one of each; 19157-2 adds standaloneReport -->
@@ -241,7 +242,7 @@
 
 <!-- ArcGIS 10 synchronization provides ImgDesc content for rasters. -->
 <!ENTITY % CovDesc '(attDesc, contentTyp+, covDim*, prcTypCde?)'> <!-- ISO 19115-1 adds prcTypCde, multiple content types allowed -->
-<!ENTITY % ImgDesc '(attDesc, contentTyp, covDim*, illElevAng?, illAziAng?, imagCond?, imagQuCode?, cloudCovPer?, prcTypCde?, cmpGenQuan?, trianInd?, radCalDatAv?, camCalInAv?, filmDistInAv?, lensDistInAv?)'>
+<!ENTITY % ImgDesc '(attDesc, contentTyp+, covDim*, illElevAng?, illAziAng?, imagCond?, imagQuCode?, cloudCovPer?, prcTypCde?, cmpGenQuan?, trianInd?, radCalDatAv?, camCalInAv?, filmDistInAv?, lensDistInAv?)'>
 <!ENTITY % RangeDimTypes '(RangeDim | Sample | Band | MiBand)'> <!-- ISO 19115-1 adds Sample -->
 <!-- not currently editing or translating ISO 19115-2 image extension (MiBand) elements; just placeholders -->
 <!-- ArcGIS 10 synchronization provides Band content for rasters. -->
@@ -512,6 +513,18 @@
 <!-- 015 (sensitivity) from NAP = sensitiveButUnclassified from ISO 19115-1 -->
 <!-- 016-017 (unrestricted | in-confidence) from ISO 19115-1 -->
 <!ELEMENT othConsts (#PCDATA)>
+<!-- INSPIRE 2.0.1 LimitationsOnPublicAccess -->
+<!ELEMENT inspirePublicAccessLimits (PublicAccessCd)>
+<!ELEMENT PublicAccessCd EMPTY>
+<!ATTLIST PublicAccessCd
+	value (001 | 002 | 003 | 004 | 005 | 006 | 007 | 008 | 009) #REQUIRED>
+<!-- 001-009 (noLimitations | sectionA | sectionB | sectionC | sectionD | sectionE | sectionF | sectionG | sectionH) from INSPIRE 2.0.1 -->
+<!-- INSPIRE 2.0.1 ConditionsApplyingToAccessAndUse -->
+<!ELEMENT inspireAccessUseConditions (ConditionsAccUseCd)>
+<!ELEMENT ConditionsAccUseCd EMPTY>
+<!ATTLIST ConditionsAccUseCd
+	value (001 | 002) #REQUIRED>
+<!-- 001-002 (noConditionsApply | conditionsUnknown) from INSPIRE 2.0.1 -->
 <!ELEMENT SecConsts %SecConsts;>
 <!ELEMENT class (ClasscationCd)>
 <!-- MD_ClassificationCode -->
